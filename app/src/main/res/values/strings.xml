@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Деньги взайм</string>
+    <string name="menu">Меню</string>
+    <string name="loans">Микрозаймы</string>
+    <string name="credit_cards">Кредитные карты</string>
+    <string name="credits">Кредиты</string>
+    <string name="privacy_policy">политика конфиденциальности</string>
+    <string name="news">Статьи</string>
+</resources>
