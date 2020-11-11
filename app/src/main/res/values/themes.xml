@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Appdengi" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/background_black</item>
         <item name="colorAccent">@color/yellow</item>
         <item name="android:windowBackground">@color/white</item>
         <!-- Status bar color. -->
@@ -10,5 +10,19 @@
         <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <item name="android:windowTranslucentNavigation">true</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="StrokeButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">54dp</item>
+        <item name="strokeColor">@color/yellow</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
+    <style name="MyButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="cornerRadius">54dp</item>
+        <item name="backgroundTint">@color/yellow</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/background_black</item>
     </style>
 </resources>

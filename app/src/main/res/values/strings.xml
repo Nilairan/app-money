@@ -6,4 +6,11 @@
     <string name="credits">Кредиты</string>
     <string name="privacy_policy">политика конфиденциальности</string>
     <string name="news">Статьи</string>
+    <string name="percent_in_day">ставка в день</string>
+    <string name="in_card">На карту</string>
+    <string name="on_few_min">За 5 мин</string>
+    <string name="nal">Наличными</string>
+    <string name="work_time">24/7</string>
+    <string name="detail">Детальнее</string>
+    <string name="submit">Оформить</string>
 </resources>

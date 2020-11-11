@@ -6,6 +6,7 @@ buildscript {
     ext.okHttpVersion = "4.9.0"
     ext.koin_version = '2.2.0-rc-3'
     ext.lifecycle_version = '2.2.0'
+    ext.groupie_version = '2.8.1'
     repositories {
         google()
         jcenter()

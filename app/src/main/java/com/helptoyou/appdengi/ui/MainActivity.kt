@@ -1,5 +1,7 @@
 package com.helptoyou.appdengi.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updatePadding
@@ -47,10 +49,14 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
     }
 
+    fun openUrl(url: String) {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+    }
+
     override fun onBackPressed() {
         val fragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
         if (fragment != null && fragment is BackButtonListener
-            && (fragment as BackButtonListener).onBackPressed()
+                && (fragment as BackButtonListener).onBackPressed()
         ) {
             return
         } else {

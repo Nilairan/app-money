@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.helptoyou.appdengi.R
-import com.helptoyou.appdengi.common.BackButtonListener
-import com.helptoyou.appdengi.common.Error
-import com.helptoyou.appdengi.common.Loading
-import com.helptoyou.appdengi.common.Success
+import com.helptoyou.appdengi.common.*
 import com.helptoyou.appdengi.databinding.FragmentCreditsBinding
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 import org.koin.core.component.KoinApiExtension
 
 @KoinApiExtension
@@ -43,12 +43,16 @@ class CreditsFragment : Fragment(), BackButtonListener {
         viewModel.creditsListLiveData.observe(viewLifecycleOwner, {
             when (it) {
                 is Success -> {
-                    print(it.data)
+                    binding.progressBar.visibility = View.GONE
+                    binding.creditsList.layoutManager = LinearLayoutManager(context)
+                    binding.creditsList.adapter = GroupAdapter<GroupieViewHolder>().apply { addAll(it.data.map { credit -> CreditItem(credit, viewModel::clickToDetail, viewModel::clickToSubmit) }) }
                 }
                 is Loading -> {
-                    print("LOADING")
+                    binding.progressBar.visibility = View.VISIBLE
                 }
                 is Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    context?.let { context -> context.openErrorAlert() }
                 }
             }
         })

@@ -3,6 +3,7 @@ package com.helptoyou.appdengi.ui.credits
 import androidx.lifecycle.*
 import com.github.terrakok.cicerone.Router
 import com.helptoyou.appdengi.common.*
+import com.helptoyou.appdengi.routing.Screens
 import com.helptoyou.domain.model.Credit
 import com.helptoyou.domain.usecase.GetCreditsUseCase
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +31,14 @@ class CreditsViewModel : BaseViewModel() {
                 _creditsListLiveData.postValue(Error())
             }
         }
+    }
+
+    fun clickToDetail(credit: Credit) {
+        router.navigateTo(Screens.CreditInfo(credit))
+    }
+
+    fun clickToSubmit(url: String) {
+        router.navigateTo(Screens.CreditsUrl(url))
     }
 
     fun onBackPressed() {
