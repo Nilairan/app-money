@@ -38,7 +38,7 @@ class CreditsViewModel : BaseViewModel() {
     }
 
     fun clickToSubmit(url: String) {
-        router.navigateTo(Screens.CreditsUrl(url))
+        router.navigateTo(Screens.GoogleUrl(url))
     }
 
     fun onBackPressed() {

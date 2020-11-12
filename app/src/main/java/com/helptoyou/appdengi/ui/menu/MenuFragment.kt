@@ -34,6 +34,15 @@ class MenuFragment : Fragment() {
         binding.creditContainer.setOnClickListener {
             routing.navigateTo(Screens.Credits())
         }
+        binding.creditCardContainer.setOnClickListener {
+            routing.navigateTo(Screens.Card())
+        }
+        binding.newsContainer.setOnClickListener {
+            routing.navigateTo(Screens.News())
+        }
+        binding.policyContainer.setOnClickListener {
+            routing.navigateTo(Screens.PrivacyPolicy())
+        }
     }
 
     companion object {
