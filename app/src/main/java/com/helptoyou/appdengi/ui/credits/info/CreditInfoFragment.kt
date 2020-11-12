@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.Router
+import com.helptoyou.appdengi.R
 import com.helptoyou.appdengi.common.BackButtonListener
+import com.helptoyou.appdengi.common.loadImage
 import com.helptoyou.appdengi.databinding.FragmentCreditInfoBinding
 import com.helptoyou.appdengi.routing.Screens
 import com.helptoyou.domain.model.Credit
@@ -28,11 +30,14 @@ class CreditInfoFragment : Fragment(), BackButtonListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.toolbar.title.text = getString(R.string.zaem)
+        binding.toolbar.backImage.setOnClickListener { onBackPressed() }
         val credit: Credit = arguments?.getSerializable(CREDIT) as Credit
         binding.docText.text = credit.dokuments
         binding.workText.text = credit.workTime
         binding.percentText.text = credit.percent
         binding.yearText.text = credit.age
+        binding.imageLogo.loadImage(credit.imageUrl)
         binding.submitButton.setOnClickListener {
             router.navigateTo(Screens.GoogleUrl(credit.url))
         }
