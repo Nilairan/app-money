@@ -1,5 +1,5 @@
 # app-money
-Project for freelans 
+Project for freelance
 
 # Stack
 - Kotlin
